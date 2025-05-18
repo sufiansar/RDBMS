@@ -300,3 +300,40 @@ ADD COLUMN email VARCHAR(100) DEFAULT 'Email Not Provid';
 ALTER TABLE courses DROP COLUMN email;
 -- Write a query to find all students who have a score greater than 80 and not null.
 SELECT * FROM students2 WHERE score >= 80 AND NOT NULL;
+
+SELECT * FROM students2;
+
+-- Use the NOT operator to exclude students from a specific department.
+SELECT * FROM students2 WHERE department = 'Computer Science';
+
+SELECT * FROM students2 WHERE NOT department = 'Computer Science';
+
+-- Fetch students whose names start with ‘A’ using LIKE and ILIKE.
+
+SELECT
+    COALESCE(student_email, 'not Provided') AS "Email",
+    age,
+    department,
+    name as "Student_Name"
+FROM students2;
+
+SELECT * FROM students2 WHERE age in (23, 24, 19, 21);
+
+SELECT * FROM students2 WHERE NOT age in (23, 24, 19, 21);
+
+SELECT * FROM students2;
+
+SELECT * FROM students2 WHERE age BETWEEN 19 and 23;
+
+SELECT * FROM students2 WHERE name LIKE 'S%';
+
+-- pagination
+SELECT * FROM students2 LIMIT 5 OFFSET 5 * 0;
+
+SELECT * FROM students2 LIMIT 5 OFFSET 5 * 1;
+
+SELECT * FROM students2 LIMIT 5 OFFSET 5 * 2;
+
+SELECT * FROM students2 LIMIT 5 OFFSET 5 * 3;
+
+SELECT * FROM students2 LIMIT 5 OFFSET 5 * 4;
